@@ -1,0 +1,23 @@
+{
+    "name": "theconceptstore/jwt-api-client",
+    "description": "This package will setup an connection to an API for retrieving and sending data.",
+    "authors": [
+        {
+            "name": "Sjors Keuninkx",
+            "email": "s.keuninkx@theconceptstore.nl"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "4.2.*",
+        "nesbot/carbon": "1.13.0",
+        "guzzlehttp/guzzle": "5.2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Tcsehv\\JwtApiClient\\": "src/"
+        }
+    },
+    "minimum-stability": "dev"
+}
+
