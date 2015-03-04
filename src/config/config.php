@@ -12,9 +12,9 @@ return array(
     |
     */
 
-    'mailFrom' => 'noreply@brightbox.nl',
+    'mailFrom' => '',
 
-    'mailTo' => array('s.keuninkx@theconceptstore.nl'),
+    'mailTo' => array(''),
 
     /*
     |--------------------------------------------------------------------------
@@ -28,11 +28,11 @@ return array(
 
     'configuration' => array(
 
-        'url' => 'http://api.dev',
+        'url' => '',
 
-        'name' => 'brightbox',
+        'name' => '',
 
-        'version' => 'v1'
+        'version' => ''
     ),
 
     /*
@@ -52,7 +52,7 @@ return array(
 
     'authentication' => array(
 
-        'default' => 'token',
+        'default' => '',
 
         'types' => array(
 
