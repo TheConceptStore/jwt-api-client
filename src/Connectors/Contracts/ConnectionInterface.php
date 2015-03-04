@@ -3,6 +3,13 @@
 use Tcsehv\JwtApiClient\Resources\ApiClient;
 use Tcsehv\JwtApiClient\Resources\Auth\Contracts\AuthenticationInterface;
 
+/**
+ * Interface ConnectionInterface
+ *
+ * @package Tcsehv\JwtApiClient\Connectors\Contracts
+ * @author Sjors Keuninkx <s.keuninkx@theconceptstore.nl>
+ * @version 1.0
+ */
 interface ConnectionInterface
 {
 

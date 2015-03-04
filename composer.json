@@ -1,6 +1,7 @@
 {
     "name": "theconceptstore/jwt-api-client",
     "description": "This package will setup an connection to an API for retrieving and sending data.",
+    "license": "MIT",
     "authors": [
         {
             "name": "Sjors Keuninkx",
@@ -18,6 +19,6 @@
             "Tcsehv\\JwtApiClient\\": "src/"
         }
     },
-    "minimum-stability": "dev"
+    "minimum-stability": "stable"
 }
 

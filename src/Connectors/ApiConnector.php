@@ -8,6 +8,15 @@ use Tcsehv\JwtApiClient\Resources\Auth\Contracts\AuthenticationInterface;
 use Tcsehv\JwtApiClient\Resources\Auth\TokenAuthentication;
 use Tcsehv\JwtApiClient\Resources\Helper;
 
+/**
+ * Class ApiConnector
+ *
+ * This class is used to create a connection other than Laravel
+ *
+ * @package Tcsehv\JwtApiClient\Connectors
+ * @author Sjors Keuninkx <s.keuninkx@theconceptstore.nl>
+ * @version 1.0
+ */
 class ApiConnector implements ConnectionInterface
 {
 
@@ -17,7 +26,7 @@ class ApiConnector implements ConnectionInterface
     protected $config;
 
     /**
-     * If config is left blank, the default config from the package will be used
+     * The provided config can be an array or a string to the designated configuration file
      *
      * @param array|string|null $config
      * @throws \RuntimeException

@@ -4,6 +4,13 @@ use Carbon\Carbon;
 use GuzzleHttp\Exception\ClientException;
 use Tcsehv\JwtApiClient\Resources\Auth\Contracts\AuthenticationInterface;
 
+/**
+ * Class BasicAuthentication
+ *
+ * @package Tcsehv\JwtApiClient\Resources\Auth
+ * @author Sjors Keuninkx <s.keuninkx@theconceptstore.nl>
+ * @version 1.0
+ */
 class BasicAuthentication implements AuthenticationInterface
 {
     /**
@@ -27,6 +34,8 @@ class BasicAuthentication implements AuthenticationInterface
     private $options;
 
     /**
+     * Initialize class
+     *
      * @param string $username
      * @param string $password
      */
@@ -34,19 +43,6 @@ class BasicAuthentication implements AuthenticationInterface
     {
         $this->username = $username;
         $this->password = $password;
-    }
-
-    /**
-     * Retrieve token based on the provided credentials
-     *
-     * @return string
-     */
-    public function getAuthorizationHeader()
-    {
-        if (empty($this->token)) {
-            $this->token = 'Basic ' . base64_encode($this->username . ':' . $this->password);
-        }
-        return $this->token;
     }
 
     /**

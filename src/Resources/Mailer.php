@@ -1,6 +1,5 @@
 <?php namespace Tcsehv\JwtApiClient\Resources;
 
-use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\View;
 

@@ -1,5 +1,12 @@
 <?php namespace Tcsehv\JwtApiClient\Resources\Auth\Contracts;
 
+/**
+ * Interface AuthenticationInterface
+ *
+ * @package Tcsehv\JwtApiClient\Resources\Auth\Contracts
+ * @author Sjors Keuninkx <s.keuninkx@theconceptstore.nl>
+ * @version 1.0
+ */
 interface AuthenticationInterface
 {
 

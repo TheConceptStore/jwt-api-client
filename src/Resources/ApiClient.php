@@ -9,6 +9,15 @@ use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\View;
 use Tcsehv\JwtApiClient\Resources\Auth\Contracts\AuthenticationInterface;
 
+/**
+ * Class ApiClient
+ *
+ * This class takes care of the connection to the API and is also used to communicate with the specified API.
+ *
+ * @package Tcsehv\JwtApiClient\Resources
+ * @author Sjors Keuninkx <s.keuninkx@theconceptstore.nl>
+ * @version 1.0
+ */
 class ApiClient
 {
     /**

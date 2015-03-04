@@ -2,6 +2,13 @@
 
 use Tcsehv\JwtApiClient\Resources\ApiClient;
 
+/**
+ * Interface ClientInterface
+ *
+ * @package Tcsehv\JwtApiClient\Resources\Client
+ * @author Sjors Keuninkx <s.keuninkx@theconceptstore.nl>
+ * @version 1.0
+ */
 interface ClientInterface
 {
 

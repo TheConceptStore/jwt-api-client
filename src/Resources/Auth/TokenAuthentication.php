@@ -2,6 +2,13 @@
 
 use Tcsehv\JwtApiClient\Resources\Auth\Contracts\AuthenticationInterface;
 
+/**
+ * Class TokenAuthentication
+ *
+ * @package Tcsehv\JwtApiClient\Resources\Auth
+ * @author Sjors Keuninkx <s.keuninkx@theconceptstore.nl>
+ * @version 1.0
+ */
 class TokenAuthentication implements AuthenticationInterface
 {
     /**

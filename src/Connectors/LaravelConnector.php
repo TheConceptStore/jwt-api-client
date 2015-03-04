@@ -8,6 +8,11 @@ use Tcsehv\JwtApiClient\Resources\Auth\BasicAuthentication;
 use Tcsehv\JwtApiClient\Resources\Auth\Contracts\AuthenticationInterface;
 use Tcsehv\JwtApiClient\Resources\Auth\TokenAuthentication;
 
+/**
+ * Class LaravelConnector
+ *
+ * @package Tcsehv\JwtApiClient\Connectors
+ */
 class LaravelConnector extends ServiceProvider implements ConnectionInterface
 {
 
@@ -18,6 +23,11 @@ class LaravelConnector extends ServiceProvider implements ConnectionInterface
      */
     protected $defer = false;
 
+    /**
+     * Bootstrap the application events.
+     *
+     * @return void
+     */
     public function boot()
     {
         $this->package('theconceptstore/jwt-api-client', 'jwt-api-client', __DIR__ . '/../');
