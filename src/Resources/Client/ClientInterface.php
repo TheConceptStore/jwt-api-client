@@ -16,7 +16,8 @@ interface ClientInterface
      * Every client needs an instance of the API client. This class is responsible for creating the connection to the API
      *
      * @param ApiClient $apiClient
+     * @param bool $debug
      */
-    public function __construct(ApiClient $apiClient);
+    public function __construct(ApiClient $apiClient, $debug = false);
 
 }
