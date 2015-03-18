@@ -1,7 +1,5 @@
 <?php namespace Tcsehv\JwtApiClient\Resources\Auth;
 
-use Carbon\Carbon;
-use GuzzleHttp\Exception\ClientException;
 use Tcsehv\JwtApiClient\Resources\Auth\Contracts\AuthenticationInterface;
 
 /**
