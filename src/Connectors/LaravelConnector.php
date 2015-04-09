@@ -31,6 +31,9 @@ class LaravelConnector extends ServiceProvider implements ConnectionInterface
     public function boot()
     {
         $this->package('theconceptstore/jwt-api-client', 'jwt-api-client', __DIR__ . '/../');
+
+        $configPath = __DIR__ . '/../config/jwt-api-client.php';
+        $this->publishes([$configPath => config_path('jwt-api-client.php')], 'config');
     }
 
     /**
@@ -40,6 +43,9 @@ class LaravelConnector extends ServiceProvider implements ConnectionInterface
      */
     public function register()
     {
+        $configPath = __DIR__ . '/../config/jwt-api-client.php';
+        $this->mergeConfigFrom($configPath, 'jwt-api-client');
+
         $this->setupClient();
     }
 
