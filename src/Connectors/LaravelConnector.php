@@ -30,8 +30,6 @@ class LaravelConnector extends ServiceProvider implements ConnectionInterface
      */
     public function boot()
     {
-        $this->package('theconceptstore/jwt-api-client', 'jwt-api-client', __DIR__ . '/../');
-
         $configPath = __DIR__ . '/../config/jwt-api-client.php';
         $this->publishes([$configPath => config_path('jwt-api-client.php')], 'config');
     }
@@ -65,14 +63,14 @@ class LaravelConnector extends ServiceProvider implements ConnectionInterface
     public function setupClient()
     {
         $this->app['apiClient'] = $this->app->share(function ($app) {
-            $config = $app['config']->get('jwt-api-client::config.configuration');
+            $config = $app['config']->get('jwt-api-client.configuration');
 
             // Instantiate client
             $auth = $this->determineAuthentication($app);
             $client = new ApiClient($config['url'], $config['name'], $config['version'], $auth);
 
             // Apply authentication and set config
-            $client->setConfig($app['config']->get('jwt-api-client::config'));
+            $client->setConfig($app['config']->get('jwt-api-client'));
 
             return $client;
         });
@@ -90,8 +88,8 @@ class LaravelConnector extends ServiceProvider implements ConnectionInterface
         /** @var AuthenticationInterface $authentication */
         $authentication = null;
 
-        $config = $app['config']->get('jwt-api-client::authentication');
-        $configType = $config['default'];
+        $config = $app['config']->get('jwt-api-client.authentication');
+        $configType = $app['config']->get('jwt-api-client.authentication.default');
 
         if (!empty($configType) && !empty($config['types'][$configType])) {
             $credentials = $config['types'][$configType];
