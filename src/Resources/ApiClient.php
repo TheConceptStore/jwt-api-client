@@ -44,12 +44,12 @@ class ApiClient
      * @var AuthenticationInterface
      */
     protected $auth;
-    
+
     /**
      * @var string
      */
     protected $name;
-    
+
     /**
      * @var string
      */
@@ -79,7 +79,7 @@ class ApiClient
     public function getGuzzleClient()
     {
         $client = new Client(['base_url' => $this->url]);
-        
+
         $client->setDefaultOption('headers', ['Accept' => 'application/vnd.' . $this->name . '.' . $this->version . '+json', 'Authorization' => $this->auth->getGuzzleOptions('token')]);
         $client->setDefaultOption('auth', $this->auth->getGuzzleOptions('auth'));
         $client->setDefaultOption('exceptions', $this->auth->getGuzzleOptions('exceptions'));
@@ -164,6 +164,17 @@ class ApiClient
     }
 
     /**
+     * Fire DELETE command to API
+     *
+     * @return null|string
+     */
+    public function delete()
+    {
+        $this->prepareOptionsForRequest();
+        return $this->send('delete');
+    }
+
+    /**
      * @param array $config
      */
     public function setConfig(array $config)
@@ -193,7 +204,7 @@ class ApiClient
         } else {
             Helper::validateFields($this->config, ['mailFrom', 'mailTo', 'configuration'], 'email');
 
-                // Send an error email
+            // Send an error email
             $mailer = new Mailer($this->config['mailFrom'], $this->config['mailTo'], $this->config['configuration']['url']);
             $mailer->sendErrorMail($method, $this->endpoint, 'Chosen method doesn\'t exist in Guzzle', '', $this->options);
         }
